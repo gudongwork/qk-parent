@@ -34,6 +34,14 @@
         </dependency>
 
 
+        <!--引入qk-entity模块-->
+        <dependency>
+            <groupId>com.itheima</groupId>
+            <artifactId>qk-entity</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

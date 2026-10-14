@@ -7,3 +7,14 @@ spring:
     url: jdbc:mysql://localhost:3306/qk
     username: root
     password: 1234
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    # 配置mybatis的输出sql日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+
+
