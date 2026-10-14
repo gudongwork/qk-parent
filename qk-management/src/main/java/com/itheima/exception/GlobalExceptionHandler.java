@@ -14,6 +14,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler
     public Result handleException(Exception e){
+        e.printStackTrace();
         log.error("异常信息：{}", e.getMessage());
         return Result.error("系统繁忙，请稍后再试！"+e.getMessage());
     }
