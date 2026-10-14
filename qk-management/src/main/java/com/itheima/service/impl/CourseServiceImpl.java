@@ -10,6 +10,7 @@ import com.itheima.vo.PageResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -20,6 +21,8 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void add(Course course) {
+        course.setUpdateTime(LocalDateTime.now());
+        course.setCreateTime(LocalDateTime.now());
         courseMapper.insert(course);
     }
 
@@ -30,6 +33,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void updateById(Course course) {
+        course.setUpdateTime(LocalDateTime.now());
         courseMapper.updateById(course);
     }
 
