@@ -15,4 +15,6 @@ public interface CoursesService {
     void deleCourseById(Integer id);
 
     List<Course> queryAll();
+
+    List<Course> findBySubject(String subject);
 }

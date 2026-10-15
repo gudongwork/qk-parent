@@ -21,7 +21,7 @@ public class CourseController {
         PageResult<Course> pageResult = coursesService.queryPage(coursePageDTO);
         Result result = new Result();
         result.setData(pageResult);
-        result.setCode(0);
+        result.setCode(1);
         result.setMsg("查询成功");
         result.setData(pageResult);
         return result;
@@ -29,26 +29,31 @@ public class CourseController {
     @PutMapping
     public Result update(@RequestBody Course course) {
         coursesService.update(course);
-        return new Result(0, "修改成功", new Object());
+        return new Result(1, "修改成功", new Object());
     }
     @PostMapping
     public Result add(@RequestBody Course course){
         coursesService.add(course);
-        return new Result(0, "添加成功", new Object());
+        return new Result(1, "添加成功", new Object());
     }
     @GetMapping("/{id}")
     public Result getCourseById(@PathVariable Integer id){
         Course course = coursesService.getCourseById(id);
-        return new Result(0, "查询成功", course);
+        return new Result(1, "查询成功", course);
     }
     @DeleteMapping("/{id}")
     public Result deleteById(@PathVariable Integer id){
         coursesService.deleCourseById(id);
-        return new Result(0,"删除成功",new Object());
+        return new Result(1,"删除成功",new Object());
     }
     @GetMapping("/list")
     public Result queryAll(){
         List<Course> courses = coursesService.queryAll();
-        return new Result(0, "查询成功", courses);
+        return new Result(1, "查询成功", courses);
+    }
+    @GetMapping("/subject/{subject}")
+    public Result findBySubject(@PathVariable String subject){
+        List<Course> courses = coursesService.findBySubject(subject);
+        return new Result(1, "查询成功", courses);
     }
 }

@@ -11,6 +11,6 @@ public class CoursePageDTO {
     private String name;
     private Integer subject;
     private Integer target;
-    private Integer page;
-    private Integer pageSize;
+    private Integer page = 1;
+    private Integer pageSize = 5;
 }

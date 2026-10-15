@@ -43,6 +43,11 @@ public class CoursesServiceImpl implements CoursesService {
     }
 
     @Override
+    public List<Course> findBySubject(String subject) {
+        return coursesMapper.findBySubject(subject);
+    }
+
+    @Override
     public void update(Course course) {
         course.setUpdateTime(LocalDateTime.now());
         coursesMapper.update(course);

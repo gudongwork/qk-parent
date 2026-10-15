@@ -7,6 +7,10 @@ spring:
     username: root
     password: 2217443192q
     driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
   # 配置mybatis输出sql语句
 mybatis:
   configuration:

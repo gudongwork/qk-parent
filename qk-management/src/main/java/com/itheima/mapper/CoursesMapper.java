@@ -21,4 +21,6 @@ public interface CoursesMapper {
     void deletCourseById(Integer id);
     @Select("select * from course")
     List<Course> queryAll();
+    @Select("select * from course where subject = #{subject}")
+    List<Course> findBySubject(String subject);
 }
