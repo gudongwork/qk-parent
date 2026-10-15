@@ -1,5 +1,6 @@
 package com.itheima.vo;
 
+import com.itheima.entity.Dept;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
