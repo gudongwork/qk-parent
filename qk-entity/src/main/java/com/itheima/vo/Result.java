@@ -45,8 +45,4 @@ public class Result {
         result.setMsg(msg);
         return result;
     }
-
-
-
-
 }
