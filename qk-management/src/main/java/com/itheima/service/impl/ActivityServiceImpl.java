@@ -1,4 +1,4 @@
-package com.itheima.service.Impl;
+package com.itheima.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
