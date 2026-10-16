@@ -8,8 +8,11 @@ import com.itheima.vo.PageResult;
 import com.itheima.vo.Result;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @Data
@@ -31,6 +34,28 @@ public class UserController {
     @PostMapping
     public Result add(@RequestBody User user){
         userService.add(user);
+        return Result.success();
+    }
+    @GetMapping("/{id}")
+    public Result queryById(@PathVariable Integer id){
+        User user = userService.queryById(id);
+        return Result.success(user);
+    }
+    @GetMapping("/role/{roleLabel}")
+    public Result queryByRoleLabel(@PathVariable String roleLabel){
+        return Result.success(userService.queryByRoleLabel(roleLabel));
+    }
+    @GetMapping("/list")
+    public Result queryAll(){
+        return Result.success(userService.queryAll());
+    }
+    @GetMapping("/dept/{deptId}")
+    public Result queryByDeptId(@PathVariable String deptId){
+        return Result.success(userService.queryByDeptId(deptId));
+    }
+    @DeleteMapping("/{ids}")
+    public Result delete(@PathVariable List<Integer> ids){
+        userService.delete(ids);
         return Result.success();
     }
 }

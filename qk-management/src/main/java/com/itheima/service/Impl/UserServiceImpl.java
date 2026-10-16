@@ -43,4 +43,35 @@ public class UserServiceImpl implements UserService {
         user.setUpdateTime(LocalDateTime.now());
         userMapper.add(user);
     }
+
+    @Override
+    public User queryById(Integer id) {
+        return userMapper.queryById(id);
+    }
+
+    @Override
+    public List<User> queryByRoleLabel(String roleLabel) {
+        return userMapper.queryByRoleLabel(roleLabel);
+    }
+
+    @Override
+    public List<User> queryAll() {
+        return userMapper.queryAll();
+    }
+
+    @Override
+    public List<User> queryByDeptId(String deptId) {
+        return userMapper.queryByDeptId(deptId);
+    }
+
+    @Override
+    public void delete(List<Integer> ids) {
+        StringBuilder sqlStr = new StringBuilder();
+        for(int i = 0; i < ids.size(); i++){
+            sqlStr.append(ids.get(i));
+            if (i == ids.size() - 1) break;
+            sqlStr.append(",");
+        }
+        userMapper.delete(sqlStr.toString());
+    }
 }

@@ -35,7 +35,6 @@ create table course (
                         create_time datetime not null comment '创建时间',
                         update_time datetime not null comment '修改时间'
 ) comment '课程表';
-drop table if exists course;
 INSERT INTO course (id, subject, name, price, target, description, create_time, update_time) VALUES
                                                                                                  (1,1,'Java核心与AI开发基础',28,1,'Java核心与AI开发基础','2025-05-09 21:29:35','2025-05-24 10:31:53'),
                                                                                                  (2,2,'Python核心与AI开发基础',39,1,'主要讲解Python核心与AI开发基础','2025-05-09 21:30:00','2025-05-09 21:42:32'),
@@ -151,3 +150,4 @@ INSERT INTO user (id, username, password, name, phone, email, gender, status, de
 SELECT * FROM user as u left join dept as d on u.dept_id = d.id
                         left join role as r on u.role_id = r.id;
 
+select u.id,username,password,u.name,phone,email,gender,status,dept_id,role_id,image,u.remark,u.create_time,u.update_time  from user as u left join role as r on u.role_id = r.id where r.label = 'Consultant';
