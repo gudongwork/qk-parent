@@ -1,7 +1,6 @@
 package com.itheima.mapper;
 
 import com.itheima.dto.ActivityDTO;
-import com.itheima.dto.CoursePageDTO;
 import com.itheima.entity.Activity;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;

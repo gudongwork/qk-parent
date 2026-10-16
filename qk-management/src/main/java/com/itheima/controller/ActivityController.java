@@ -1,14 +1,10 @@
 package com.itheima.controller;
 
 import com.itheima.dto.ActivityDTO;
-import com.itheima.dto.CoursePageDTO;
 import com.itheima.entity.Activity;
-import com.itheima.entity.Course;
 import com.itheima.service.ActivityService;
-import com.itheima.service.CoursesService;
 import com.itheima.vo.PageResult;
 import com.itheima.vo.Result;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

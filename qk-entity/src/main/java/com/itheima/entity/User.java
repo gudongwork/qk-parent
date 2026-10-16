@@ -13,9 +13,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    /**
-     * 用户ID，主键
-     */
     private Integer id;
     /**
      * 用户名，唯一

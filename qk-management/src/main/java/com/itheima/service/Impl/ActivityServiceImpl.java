@@ -3,13 +3,9 @@ package com.itheima.service.Impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.itheima.dto.ActivityDTO;
-import com.itheima.dto.CoursePageDTO;
 import com.itheima.entity.Activity;
-import com.itheima.entity.Course;
 import com.itheima.mapper.ActivityMapper;
-import com.itheima.mapper.CoursesMapper;
 import com.itheima.service.ActivityService;
-import com.itheima.service.CoursesService;
 import com.itheima.vo.PageResult;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -45,7 +41,6 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> queryAll() {
         return activityMapper.queryAll();
     }
-
 
     @Override
     public void update(Activity activity) {
